@@ -47,6 +47,8 @@ def process_files(target_dir, search_pattern,custom_name):
                             
                         if not content.endswith('\n'):
                             outfile.write('\n')
+            print(f"✏️  Merge all files to : {new_filename}")
+
                             
         elif count == 1:
             if found_files[0].name != new_filename:
