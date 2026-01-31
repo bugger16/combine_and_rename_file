@@ -30,7 +30,7 @@ def process_files(target_dir, search_pattern,custom_name):
         if count > 1:
             with output_path.open('w', encoding='utf-8') as outfile:
                 for idx, f_path in enumerate(found_files):
-                    if f_path.start().st_size == 0:
+                    if f_path.stat().st_size == 0:
                         print(f"   ⚠️ Skip empty file: {f_path.name}")
                         continue
                     
@@ -51,7 +51,7 @@ def process_files(target_dir, search_pattern,custom_name):
         elif count == 1:
             if found_files[0].name != new_filename:
                 found_files[0].rename(output_path)
-                printf(f"✏️  Changed file name to : {new_filename}")
+                print(f"✏️  Changed file name to : {new_filename}")
                         
 
 if __name__ == "__main__":
